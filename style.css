@@ -95,11 +95,13 @@ body {
     font-weight: bold;
     cursor: pointer;
     margin: 4px;
-    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0px 0px 50px 0px transparent;
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .key:hover {
     background-color:  rgb(255, 136, 0);
+    box-shadow: 0px 0px 100px 10px rgba(255, 136, 0, 0.377);
 }
 
 .key:active {
