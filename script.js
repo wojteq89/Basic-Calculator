@@ -11,6 +11,10 @@ function appendToDisplay(input) {
         display.value += input;
     }
     calculate();
+    calcEstimation.classList.add("jump");
+    setTimeout(() => {
+        calcEstimation.classList.remove("jump");
+    }, 500);
 }
 
 function clearDisplay() {
@@ -20,15 +24,27 @@ function clearDisplay() {
 
 function finalResult() {
     try {
-        if(display.value === ""){
+        if (display.value === "") {
             display.value = "";
-        }if (display.value.includes("/0")) {
+        } else if (display.value.includes("/0")) {
             display.value = "";
             calcEstimation.value = "";
-        }else {
+        } else {
             const calc = eval(display.value);
             display.value = calc;
-            calcEstimation.value = "";
+            
+            display.classList.add("displayAnimation");
+            setTimeout(() => {
+                display.classList.remove("displayAnimation");
+            }, 1000);
+
+            calcEstimation.classList.add("calcEstimationAnimation");
+            setTimeout(() => {
+                calcEstimation.classList.remove("calcEstimationAnimation");
+            }, 1000);
+            setTimeout(() => {
+                calcEstimation.value = "";
+            }, 1000);
         }
     } catch (e) {
         calcEstimation.value = "Błąd";
