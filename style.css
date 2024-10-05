@@ -1,0 +1,123 @@
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    background-color: rgb(15, 15, 15);
+}
+#calculator {
+    width: 90%;
+    height: 90%;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+}
+
+#results {
+    position: relative;
+}
+
+#display {
+    width: 100%;
+    height: 30vh;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    text-align: right;
+    border-bottom: 2px solid rgb(58, 58, 58);
+}
+
+#calcEstimation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    color: hsl(0, 0%, 30%);
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+#keys {
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#operators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.operatorButton {
+    background-color: rgb(255, 136, 0) !important;
+    transform: scale(1);
+    color: black !important;
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out !important;
+}
+
+.operatorButton:hover {
+    background-color: hsl(0, 0%, 30%) !important;
+}
+
+.operatorButton:active {
+    background-color: rgb(255, 136, 0) !important;
+    transform: scale(0.8) !important;
+}
+
+.clearButton {
+    color: rgb(255, 53, 53) !important;
+}
+
+.key {
+    flex-basis: 30%;
+    width: 100px;
+    height: 10.5vw;
+    min-height: 55px;
+    max-height: 80px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 4px;
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.key:hover {
+    background-color:  rgb(255, 136, 0);
+}
+
+.key:active {
+    background-color: hsl(0, 0%, 30%);
+    transition: background-color 0.1s ease-in-out;
+    transform: scale(0.8);
+}
+
+.row {
+    margin-right: 0px;
+}
+
+@media screen and (width < 470px) {
+    #keys {
+        flex-direction: column;
+    }
+    #operators {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
